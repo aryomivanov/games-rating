@@ -1,8 +1,13 @@
-const defaultRouteController = require("./controllers/default");
-const mainRouteController = require("./controllers/main");
-const voteRouteController = require("./controllers/vote");
+const http = require("http");
+const { gameRouteController, 
+      mainRouteController,
+      voteRouteController,
+      defaultRouteController } = require("./controllers/");
 
 const server = http.createServer((req, res) => {
+      server.listen(3005, () => {
+            console.log("Server is listening on port 3005");
+      })
   const url = req.url;
   switch (url) {
     case "/":
