@@ -5,9 +5,7 @@ const { gameRouteController,
       defaultRouteController } = require("./controllers/");
 
 const server = http.createServer((req, res) => {
-      server.listen(3005, () => {
-            console.log("Server is listening on port 3005");
-      })
+
   const url = req.url;
   switch (url) {
     case "/":
@@ -22,4 +20,9 @@ const server = http.createServer((req, res) => {
       default:
         defaultRouteController(res, url);
   }
+  
 }); 
+
+server.listen(3005, () => {
+      console.log("Server is listening on port 3005");
+}) 
